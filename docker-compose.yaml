@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  redis:
+    container_name: redis
+    image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "6379:6379"
+    networks:
+      - rate-limiter
+
+networks:
+  rate-limiter:
+    name: rate-limiter
+    driver: bridge
