@@ -10,8 +10,8 @@ services:
       - "6379:6379"
     networks:
       - rate-limiter
-  app:
-    container_name: app
+  aplicacao:
+    container_name: aplicacao_rate_limiter
     build: 
       context: .
       dockerfile: Dockerfile
